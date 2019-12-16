@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Input Type Selectors</title>
+    <script src="js/jquery-3.3.1.js"></script>
+</head>
+<body>
+
+    Skills :
+    <input type="checkbox" name="skills" value="JavaScript" />JavaScript
+    <input type="checkbox" name="skills" value="jQuery" />jQuery
+    <input type="checkbox" name="skills" value="C#" />C#
+    <input type="checkbox" name="skills" value="VB" />VB
+    <br /><br />
+    Preferred Cities :
+    <input type="checkbox" name="cities" value="New York" />New York
+    <input type="checkbox" name="cities" value="New Delhi" />New Delhi
+    <input type="checkbox" name="cities" value="London" />London
+    <br /><br />
+    <input id="btnGetSelectedSkills" type="submit" value="Get Selected Skills" />
+    <input id="btnGetSelectedCities" type="submit" value="Get Selected Cities" />
+    <br /><br />
+    <div id="divResult">
+    </div>
+
+
+    <script>
+
+        $(document).ready(function () {
+
+            $('#btnGetSelectedSkills').click(function () {
+                alert("called1");
+                getSelectedCheckBoxes('skills');
+            });
+
+            $('#btnGetSelectedCities').click(function () {
+                alert("called2");
+                getSelectedCheckBoxes('cities');
+            });
+
+
+            var getSelectedCheckBoxes = function (gpname) {
+                var result = $('input[name="' + gpname + '"]:checked');
+               
+                if (result.length > 0) {
+                    var resultString = result.length + " checkboxe(s) checked<br/>";
+                    result.each(function () {
+                        resultString += $(this).val() + "<br/>";
+                    });
+                    $('#divResult').html(resultString);
+                }
+                else {
+                    $('#divResult').html("No checkbox checked");
+                }
+            };
+        });
+    </script>
+</body>
+</html>

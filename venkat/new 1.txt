@@ -1,0 +1,19 @@
+
+
+on - function binds event
+$("#btn4").on("click",function(){
+                alert("Click Me pressed.");
+            }
+            );
+			
+One - function executes event only once
+$("#btn2").one("click",function(){
+                alert("Click Me pressed.");
+            }
+            );
+			
+off - function stop the event execution
+$("#btn3").off("click",function(){
+                alert("button not pressed.");
+            }
+            );

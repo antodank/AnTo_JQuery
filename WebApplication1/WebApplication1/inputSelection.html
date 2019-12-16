@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Input Type Selectors</title>
+    <script src="js/jquery-3.3.1.js"></script>
+</head>
+<body>
+
+    Gender :
+    <input type="radio" name="gender" value="Male">Male
+    <input type="radio" name="gender" value="Female">Female
+    <br />
+    Skills :
+    <input type="checkbox" name="skills" value="JavaScript" />JavaScript
+    <input type="checkbox" name="skills" value="jQuery" />jQuery
+    <input type="checkbox" name="skills" value="C#" />C#
+    <input type="checkbox" name="skills" value="VB" />VB
+    <br />
+    Country:
+    <select id="selectCountries">
+        <option selected="selected" value="USA">United States</option>
+        <option value="IND">India</option>
+        <option value="UK">United Kingdom</option>
+        <option value="CA">Canada</option>
+        <option value="AU">Australia</option>
+    </select>
+    <br />
+    <input id="btnSubmit" type="submit" value="submit" />
+    <br />
+    <div id="divResult">
+    </div>
+
+    <script>
+
+        $(document).ready(function () {
+            $('#btnSubmit').click(function () {
+                var msg = "";
+                var result = $('input[type="radio"]:checked');
+                if (result.length > 0) {
+                    msg = result.val() + " is checked. <br/>";
+                }
+                else {
+                    msg = "No radio button checked. <br/>"
+                }
+
+                var result = $('input[type="checkbox"]:checked');
+                if (result.length > 0) {
+                    var resultString = result.length + " checkboxe(s) checked<br/>";
+                    result.each(function () {
+                        resultString += $(this).val() + "<br/>";
+                    });
+                    msg += resultString;
+                }
+                else {
+                    msg += "No checkbox checked";
+                }
+
+                var selectedOption = $('#selectCountries option:selected');
+                msg += '<br> selected value' + selectedOption.val()
+                msg += '<br> selected value' + selectedOption.text()
+
+                $('#divResult').html(msg);
+            });
+        });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="js/jquery-3.3.1.js"></script>
+</head>
+<body>
+
+     <!--
+        JSON stands for JavaScript Object Notation.
+        JSON.parse() - converts a JSON string to a JSON array. 
+        JSON.stringify() - converts JSON object to string
+
+         studentJSON is called as JSON object
+         properties are enclosed in curly braces in key value format
+
+         employeesJSON is called as JSON object array
+         each object is wrapped in square brackets and separated by comma
+         
+    -->
+    <div id ="div1">
+         <input type="button" id ="button1" value="Click Me"/>
+    </div>
+    <div id ="resultdiv"></div>
+    <div id="div2"></div>
+    <div>
+        <table id="table" >
+        <tr>
+            <th>firstName</th>
+            <th>lastName</th>
+             <th>gender</th>
+            <th>salary</th>
+        </tr>
+</table>
+    </div> 
+    <script>
+        $(document).ready(function () {
+
+            var studentJSON = {
+                "Name": "Anks",
+                "School": "HGS",
+                "Class": "10",
+            };
+
+            var employeesJSON = [
+                {
+                    "firstName": "Todd",
+                    "lastName": "Grover",
+                    "gender": "Male",
+                    "salary": 50000
+                },
+                {
+                    "firstName": "Sara",
+                    "lastName": "Baker",
+                    "gender": "Female",
+                    "salary": 40000
+                }
+            ];
+
+            var result = '';
+
+            $.each(employeesJSON, function (i, item) {
+                result += 'First Name = ' + item.firstName + '<br/>';
+                result += 'Last Name = ' + item.lastName + '<br/>';
+                result += 'Gender = ' + item.gender + '<br/>';
+                result += 'Salary = ' + item.salary + '<br/><br/>';
+            });
+
+            $('#resultdiv').html(result);
+
+            var JSONString = JSON.stringify(employeesJSON);
+            $('#div2').html(JSONString);
+
+            $('#button1').click(function () {
+
+                var len = employeesJSON.length;
+                var tblresult = '';
+                $.each(employeesJSON, function (i, item) {
+                    tblresult += "<tr><td>" + item.firstName + "</td><td>" + item.lastName + "</td><td>" + item.gender + "</td><td>" + item.salary + "</td></tr>";
+                });
+                //alert(tblresult);
+                $('#table').append(tblresult);
+
+            });
+        });
+
+    </script> 
+
+</body>
+</html>

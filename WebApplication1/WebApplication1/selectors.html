@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>JQuery Selectors - 1</title>
+    <script src="js/jquery-3.3.1.js"></script>
+</head>
+<body>
+    <!-- 
+        jQuery #id selector is the most efficient among all jQuery selectors
+
+         jQuery #id selector returns only the first element, if you have 2 or more elements exist with same id
+
+        document.getElementById() function throws an error if element doesnt exist
+        Whereas JQuery #id selector will not throw an error
+
+        document.getElementById() returns a raw DOM object
+        jQuery('#id') selector returns a jQuery object  with methods
+
+        document.getElementById() is faster than jQuery('#id') selector.
+
+        class selector
+        ('.small') // Selects all elements with class small
+        $('.small,.big') // Selects all elements with class small or big
+        $('div.small,.big') // Selects div elements with class small and any element with class big
+         -->
+
+    <h3> ID Selector</h3> 
+    <input type="button" id="btnclickme" value="Check Element" />
+    <input type="button" id="button1" value="Click Me" />
+    <h3> Class Selector</h3> 
+    <span class="small">
+        Span 1
+    </span>
+    <br />
+    <div class="small">
+        Div 1
+    </div>
+    <br />
+    <span class="big">
+        Span 2
+    </span>
+    <br />
+    <div class="big">
+        Div 2
+    </div>
+    <br />
+    <p class="big small">This is a paragraph</p>
+
+    <script>
+
+        $(document).ready(function () {
+
+            $('#btnclickme').click(function () {
+
+                if ($('#button1').length > 0) {
+                    alert('Element found')
+                }
+                else {
+                    alert('Element not found')
+                }
+
+            })
+
+            $('.small').css('border', '5px solid red');
+            $('.big').css('border', '5px solid green');
+            
+        });
+
+    </script>
+
+</body>
+</html>

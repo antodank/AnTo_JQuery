@@ -1,0 +1,85 @@
+<html>
+    <head>
+        <title>
+            Page 29
+        </title>
+        <script src="js/jquery-3.3.1.js"></script>
+        <script src="js/jquery-3.3.1.min.js"></script>
+    </head>
+    <body style="font-family:Arial, Helvetica, sans-serif">
+        <script type="text/javascript">
+        $(function()
+        {
+            
+           $("#ddlCity").change(function(){
+            var result = '';
+              result = "Selected Cities : " + $(this).val()
+              $("#divresult").html(result);
+           })
+
+            $('input[type="checkbox"]').change(function(){
+                var result = '';
+                 result += "Selected Option : - " + $(this).val() + "<br>";
+                 $("#divresult").html(result);
+            })
+
+           
+        
+        });
+        </script>
+        <div>
+           <table>
+               <tr>
+                   <td>First Name:</td>
+                   <td><input id="txtfirstname" type="text" class="required"/> </td>
+                </tr>
+               <tr>
+                   <td>Last Name:</td>
+                   <td><input id="txtlastname" type="text" class="required"/> </td>
+                </tr>
+               <tr>
+                   <td>City:</td>
+                   <td> 
+                       <select id="ddlCity" class="required">
+                            <option value="-1">Select City</option>
+                           <option value="1">Mumbai</option>
+                           <option value="2">Delhi</option>
+                           <option value="3">Kolkata</option>
+                           <option value="4">Chennai</option>
+                       </select>
+                   </td>
+                </tr>
+               <tr>
+                   <td><Gender/td>
+                   <td>
+                       <input id="radMale" type="radio" value ="1"/>Male
+                       <input id="radFemale" type="radio" value ="2"/>Female
+                   </td>
+                </tr>
+               <tr>
+                   <td>Communication Method:</td>
+                   <td>
+                       <input id="chkEmail" type="checkbox" value ="Email"/>Email
+                       <input id="chkSMS" type="checkbox" value ="SMs"/>SMS
+                       <input id="chkFacebook" type="checkbox" value ="Facebook"/>Facebook
+                   </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input id="btnSubmit" type="button" value="submit"/>
+                    </td>
+                    <td>
+                        <input id="btnClear" type="button" value="Clear"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div id='divresult'>
+
+                        </div>
+                    </td>
+                </tr>
+           </table>
+        </div>
+    </body>
+</html>

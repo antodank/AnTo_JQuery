@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>Arrays!!!</title>
+<script type="text/javascript">
+var array1 = ["ankit" ,  "viraj" , "Ram", "Sam", "Amar"]
+var array2 = [6,3,8,2,9]
+
+document.write(array1[0] + "<br/>");
+document.write(array1[1] + "<br/>");
+
+document.write(array1.length + "<br/>");
+
+Array.prototype.DisplayItems = function(){
+    for (i=0;i<this.length ;i++)
+    {
+        document.write(this[i] + "<br />");
+    }
+};
+
+array1.DisplayItems();
+
+array2.sort().DisplayItems();
+
+</script>
+</head>
+<body>
+</body>
+</html>

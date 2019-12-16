@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <title>
+            Page 39
+        </title>
+        <script src="js/jquery-3.3.1.js"></script>
+        <script src="js/jquery-3.3.1.min.js"></script>
+    </head>
+    <body>
+        <script type="text/javascript">
+        $(function()
+        {
+            $("#btn1").click(function(){
+                alert("btn1 pressed.");
+            }
+            );
+
+            $("#btn2").one("click",function(){
+                alert("btn2 pressed.");
+            }
+            );
+
+            $("#btn3").off("click",function(){
+                alert("btn3 not pressed.");
+            }
+            );
+
+             $("#btn4").on({
+                mouseover: function(){
+                    $(this).css('backgroud-color','yellow')
+                },
+                mouseout: function(){
+                    $(this).css('backgroud-color','yellow')
+                },
+                click: function(){
+                    alert("button4  pressed.");
+                }
+             }
+            );
+        
+        });
+        </script>
+        <div>
+            <div>
+                <input type="button" id="btn1" value="Click Me"/>
+            </div>
+            <br>
+            <div>
+                <input type="button" id="btn2" value="Click Me"/>
+            </div>
+            <br>
+            <div>
+                <input type="button" id="btn3" value="Click Me"/>
+            </div>
+            <br>
+            <div>
+                <input type="button" id="btn4" value="Click Me"/>
+            </div>
+        </div>
+    </body>
+</html>

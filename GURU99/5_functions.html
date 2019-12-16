@@ -1,0 +1,47 @@
+<html>
+<head>
+        <title>Functions!!!</title>
+	<script type="text/javascript">
+		var count = 0;
+		function countVowels(name)
+		{
+			for (var i=0;i<name.length;i++)
+			{
+              if(name[i] == "a" || name[i] == "e" || name[i] == "i" || name[i] == "o" || name[i] == "u")
+              count = count + 1;
+			}
+		document.write("Hello " + name + "!!! Your name has " + count + " vowels. <br />");
+		}
+
+		function addNumbers(num1,num2)
+		{
+			return num1 + num2;
+		}
+
+		function reverseString(str)
+		{
+			 var len = str.length - 1;
+
+			 var newstr = "";
+			 while(len >= 0)
+			 {
+				newstr = newstr + str.charAt(len)
+				len = len - 1;
+			 }
+
+			 return newstr;
+		}
+
+   	 	var myName = prompt("Please enter your name");
+    	countVowels(myName);
+
+		document.write(addNumbers(15,25) + "<br />");
+
+		document.write("Reverse Name = " + reverseString(myName));
+
+
+	</script>
+</head>
+<body>
+</body>
+</html> 

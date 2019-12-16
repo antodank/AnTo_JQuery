@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Registration</title>
+    <script src="js/jquery-3.3.1.js"></script>
+    <!--<script src="js/jquery-1.11.3.js"></script>-->
+</head>
+<body>
+   
+
+    <table>
+        <tr>
+            <td>First Name</td>
+            <td><input id="firstName" type="text" /></td>
+            <td><div id="firstNameHelpDiv"></div></td>
+        </tr>
+        <tr>
+            <td>Last Name</td>
+            <td><input id="lastName" type="text" /></td>
+            <td><div id="lastNameHelpDiv"></div></td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td><input id="email" type="text" /></td>
+            <td><div id="emailHelpDiv"></div></td>
+        </tr>
+        <tr>
+            <td>Income</td>
+            <td><input id="income" type="text" /></td>
+            <td><div id="incomeHelpDiv"></div></td>
+        </tr>
+    </table>
+
+    <script>
+
+        $(document).ready(function () {
+           
+            var textBoxes = $('input[type="text"]');
+            textBoxes.focus(function () {
+                var helpDiv = $(this).attr('id') + 'HelpDiv';
+                $('#' + $(this).attr('id')).css('border', '2px solid red');
+                $('#' + helpDiv).load('Help.html #' + helpDiv);
+            });
+
+            textBoxes.blur(function () {
+                var helpDiv = $(this).attr('id') + 'HelpDiv';
+                $('#' + $(this).attr('id')).css('border', '2px solid black');
+                $('#' + helpDiv).html('');
+            });
+        });
+
+    </script> 
+</body>
+</html>

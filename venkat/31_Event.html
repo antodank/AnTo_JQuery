@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <title>
+            Page 31
+        </title>
+        <script src="js/jquery-3.3.1.js"></script>
+        <script src="js/jquery-3.3.1.min.js"></script>
+        <style>
+            .btnstyle
+            {
+                background-color: red;
+                font-weight: bold;
+                cursor: pointer; 
+            }
+        </style>
+    </head>
+    <body>
+        <script type="text/javascript">
+        $(function()
+        {
+            $("#btn1").click(function(event){
+              geteventDetails(event);
+            }
+            ).mouseover(function(evnrt){
+                geteventDetails(event);
+            }).mouseout(function(evnrt){
+                geteventDetails(event);
+            });
+
+            function geteventDetails(evt)
+            {
+                var result = "Name - " + evt.type + "<br>" + 
+                            "X - " + evt.pageX +  "<br>" + 
+                            "X - " + evt.pageY +  "<br>" + 
+                            "Event Target - " + evt.target.type +  "<br>" + 
+                            "Event Target Tag - " + evt.target.tagName ;
+
+                $("#divResult").html(result);
+            }
+
+            $("#btn2").bind("click mouseover mouseout",function(evt){
+                if(evt.type == 'click')
+                    $("#divResult").html("Name - " + evt.type + "<br>" + "X - " + evt.pageX +  "<br>" + "X - " + evt.pageY );
+                else if(evt.type == 'mouseover')
+                    $(this).addClass(btnstyle) ;
+                else if(evt.type == 'mouseout') 
+                    $(this).removeClass(btnstyle) ;
+            });
+
+        });
+        </script>
+        <div>
+            <div>
+                <input type="button" id="btn1" value="Click Me"/>
+            </div>
+            <br>
+            <div>
+                <input type="button" id="btn2" value="Click Me"/>
+            </div>
+            <br>
+            <div id="divResult">
+            </div>
+            
+        </div>
+    </body>
+</html>

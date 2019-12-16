@@ -1,0 +1,78 @@
+﻿<html>
+<head>
+    <title>DatePicker Example</title>
+    <link href="css/jquery-ui.css" rel="stylesheet" />
+    <style type="text/css">
+        td.redday, table.ui-datepicker-calendar tbody td.redday a {
+            background: none !important;
+            background-color: red !important;
+            background-image: none !important;
+            color: White !important;
+            font-weight: bold !important;
+            font-size: 12pt;
+        }
+    </style>
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script>
+        $(function () {
+
+            var disabledTool = new Date();
+            disabledTool.setDate(disabledTool.getDate() - 2);
+            disabledTool.setHours(0, 0, 0, 0);
+
+            $("#datep").datepicker();
+
+            $("#datepicker").datepicker({
+                beforeShowDay: function (date) {
+                    var tooltipDate = "This date is DISABLED!!";
+                    if (date.getTime() == disabledTool.getTime()) {
+                        return [false, 'redday', tooltipDate];
+                    } else {
+                        return [true, '', ''];
+                    }
+                }
+            });
+
+            $("#datepicker1").datepicker({
+                beforeShowDay: $.datepicker.noWeekends
+            });
+
+            $('#datepicker2').datepicker({
+                changeMonth: true,
+                changeYear: true,
+                showButtonPanel: true,
+                dateFormat: 'MM yy',
+                onClose: function (dateText, inst) {
+                    var month = $("#ui-datepicker-div .ui-datepicker-month :selected").val();
+                    var year = $("#ui-datepicker-div .ui-datepicker-year :selected").val();
+                    $(this).datepicker('setDate', new Date(year, month, 1));
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <h3>Click to select a date :</h3>
+        <input type="text" id="datep" />
+    </div>
+    
+    <div>
+        <h3>Disable Date :</h3>
+        <input type="text" id="datepicker" />
+    </div>
+    
+    <div>
+        <h3>Disable Weekend :</h3>
+        <input type="text" id="datepicker1" />
+    </div>
+
+    <div>
+        <h3>Month Year :</h3>
+        <input type="text" id="datepicker2" />
+    </div>
+    
+   
+</body>
+</html>

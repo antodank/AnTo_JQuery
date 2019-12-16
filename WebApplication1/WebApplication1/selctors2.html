@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>JQuery Selectors - 2</title>
+    <script src="js/jquery-3.3.1.js"></script>
+</head>
+<body>
+    <!-- 
+        $('[title]') // Selects all elements that have title attribute
+        $('div[title]') // Selects all div elements that have title attribute
+        $('div[title][style]') // selects all div elements with title and style attribute
+        $('[title="divTitle"]') // Selects all elements that have title attribute value - divTitle
+        $('div[title="divTitle"]') // Selects all div elements that have title attribute value - divTitle
+
+        $('[title^="div"]')     select all element that have title attribute value starting with div 
+        $('[title$="Title"]')   select all element that have title attribute value ending with Heading
+        $('[title*="Title"]')   select all element that have title attribute value containing the given substring 'Title'
+
+         -->
+    <div title="div1Title">
+        DIV 1
+    </div>
+    <br />
+    <div title="div2Title">
+        DIV 2
+    </div>
+    <p title="pTitle">
+        This is a paragraph
+    </p>
+    <span title="spanTitle">
+        SPAN 1
+    </span>
+    <br/>
+    <span>
+        SPAN 2
+    </span>
+    <br/>
+    <div title="divTitle" style="background-color:red">
+        Red DIV
+    </div>
+    <br />
+    <div title="divTitle" style="background-color:green">
+        Green DIV
+    </div>
+
+    <div title="mydiv">
+        MY DIV 1
+    </div>
+    <br />
+    <div title="MYDIV">
+        MY DIV 2
+    </div>
+    <br />
+    <div title="MyDiv">
+        MY DIV 3
+    </div>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //$('[title]').css('border', '5px solid red');
+            $('div[title="div1Title"]').css('border', '5px solid red');
+            $('div[title][style]').css('border', '5px solid black');
+
+            $('div[title]').filter(function () {
+                return $(this).attr('title').toLowerCase() == 'mydiv';
+            }).css('border', '3px solid red');
+        });
+    </script>
+</body>
+</html>

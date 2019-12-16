@@ -1,0 +1,6 @@
+D:\PRACS\JQUERY\JQueryAjaxWebApp\JQueryAjaxWebApp\bin\JQueryAjaxWebApp.dll.config
+D:\PRACS\JQUERY\JQueryAjaxWebApp\JQueryAjaxWebApp\bin\JQueryAjaxWebApp.dll
+D:\PRACS\JQUERY\JQueryAjaxWebApp\JQueryAjaxWebApp\bin\JQueryAjaxWebApp.pdb
+D:\PRACS\JQUERY\JQueryAjaxWebApp\JQueryAjaxWebApp\obj\Debug\JQueryAjaxWebApp.csprojResolveAssemblyReference.cache
+D:\PRACS\JQUERY\JQueryAjaxWebApp\JQueryAjaxWebApp\obj\Debug\JQueryAjaxWebApp.dll
+D:\PRACS\JQUERY\JQueryAjaxWebApp\JQueryAjaxWebApp\obj\Debug\JQueryAjaxWebApp.pdb

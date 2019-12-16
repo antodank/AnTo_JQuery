@@ -1,0 +1,36 @@
+<html>
+<head>
+<title>Loops!!!</title>
+<script type="text/javascript">
+var arrNames = new Array("Ram","Shyam","Raj","Sam");
+    for(i = 0; i < arrNames.length; i++)
+    {
+        document.writeln(arrNames[i]);
+    }
+
+    var i = 0, j = 1, k;
+    document.write("Fibonacci series less than 40<br />");
+    while(i<40)
+    {
+        document.write(i + "<br />");
+        k = i+j;
+        i = j;
+        j = k;
+    }
+
+    document.write("printing even numbers less than 40<br />");
+    var i = 2;
+    do
+    {
+        if(i%2==0)
+        {
+            document.write(i + "<br />");
+        }
+        i++;
+    }while(i <= 20)
+
+</script>
+</head>
+<body>
+</body>
+</html>
